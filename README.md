@@ -1,0 +1,2 @@
+# Image-Inspector
+Python - pytesseract 
