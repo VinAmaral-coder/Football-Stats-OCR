@@ -4,16 +4,6 @@ Image-Inspector is a Python project focused on extracting football match statist
 
 The application identifies player and club statistics, processes the extracted data and exports the results to structured formats such as CSV for further analysis.
 
-## Features
-
-- 📷 Read FIFA screenshots
-- 🔎 Optical Character Recognition (OCR)
-- 👤 Extract player statistics
-- 🏟️ Extract club statistics
-- 📊 Export structured CSV files
-- ⚙️ Data preprocessing for better OCR accuracy
-- 📈 Designed for football statistics analysis
-
 ## Technologies
 
 - Python
