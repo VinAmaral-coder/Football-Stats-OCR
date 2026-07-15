@@ -3,6 +3,9 @@ import pytesseract
 from dataclasses import dataclass
 import csv
 
+# Caminho do executável do Tesseract
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
 
 @dataclass
 class ClubStats:
