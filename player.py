@@ -3,6 +3,7 @@ import pytesseract
 import csv
 import os
 import re
+import glob
 
 # Caminho do Tesseract
 
@@ -49,7 +50,7 @@ def ocr_texto(imagem, config):
 
     texto = pytesseract.image_to_string(
         imagem,
-        lang="eng",
+        lang="por+eng",
         config=config
     )
 
@@ -174,9 +175,7 @@ def ler_jogador(caminho_imagem):
     print("----------------------------")
     print("Nome OCR    :", nome_texto)
     print("Overall OCR :", overall_texto)
-    print("Stats jogador:", stats_jogador)
-    print("Stats time   :", stats_time)
-    print("----------------------------")
+    print("----------------------------")    
 
     # Monta o registro final: nome, overall + uma coluna
     # por estatística (só do jogador, como você pediu)
@@ -191,10 +190,18 @@ def ler_jogador(caminho_imagem):
 
 # Lista de imagens
 
-imagens = [
-    "images/player-img.png",
-    "images/player2-img.png",
-]
+# Busca automática das imagens de jogador na pasta "images"
+EXTENSOES_VALIDAS = ("*.png", "*.jpg", "*.jpeg", "*.bmp", "*.webp")
+
+imagens = []
+for extensao in EXTENSOES_VALIDAS:
+    imagens.extend(glob.glob(os.path.join("images", extensao)))
+
+imagens = sorted(i for i in imagens if "player" in os.path.basename(i).lower())
+
+print(f"\n{len(imagens)} imagem(ns) encontrada(s):")
+for caminho in imagens:
+    print(" -", caminho)
 
 jogadores = []
 times = []  # guardamos à parte, caso queira usar depois
@@ -221,7 +228,3 @@ with open(
     writer.writerows(jogadores)
 
 print("\nCSV criado com sucesso!")
-print("\nJogadores encontrados:\n")
-
-for jogador in jogadores:
-    print(jogador["nome"], "-", jogador["overall"])
