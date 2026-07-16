@@ -56,8 +56,15 @@ def ocr_texto(imagem, config):
 
     return texto.strip()
 
+
+# ======================================================
 # Lista fixa das 17 estatísticas da tela "DESEMPENHO
-# INDIVIDUAL", sempre na mesma ordem
+# INDIVIDUAL", sempre na mesma ordem. Usamos essa lista
+# em vez de confiar no texto (rótulo) lido pelo OCR, porque
+# o OCR erra muito em acentuação portuguesa (ex: "Assisténcias",
+# "Precisdo"). O NÚMERO é o que importa e esse o Tesseract lê
+# bem — o rótulo a gente já sabe de antemão.
+# ======================================================
 
 ROTULOS_TABELA = [
     "gols",
@@ -77,6 +84,7 @@ ROTULOS_TABELA = [
     "minutos_jogados_media_time",
     "distancia_percorrida_media_time_km",
     "distancia_corrida_media_time_km",
+
 ]
 
 
@@ -112,8 +120,6 @@ def ler_jogador(caminho_imagem):
 
     altura, largura = img.shape[:2]
 
-    print(f"\nLendo: {caminho_imagem}")
-    print(f"Resolução: {largura}x{altura}")
 
     if (largura, altura) == (1360, 768):
 
@@ -182,15 +188,14 @@ def ler_jogador(caminho_imagem):
 
 
 # Lista de imagens
-
-# Busca automática das imagens de jogador na pasta "images"
 EXTENSOES_VALIDAS = ("*.png", "*.jpg", "*.jpeg", "*.bmp", "*.webp")
 
 imagens = []
 for extensao in EXTENSOES_VALIDAS:
-    imagens.extend(glob.glob(os.path.join("images", extensao)))
+    imagens.extend(glob.glob(os.path.join("images/Players", extensao)))
 
-imagens = sorted(i for i in imagens if "player" in os.path.basename(i).lower())
+# Ordena todas as imagens encontradas (sem filtrar pelo nome "player")
+imagens = sorted(imagens)
 
 print(f"\n{len(imagens)} imagem(ns) encontrada(s):")
 for caminho in imagens:
