@@ -56,15 +56,8 @@ def ocr_texto(imagem, config):
 
     return texto.strip()
 
-
-# ======================================================
 # Lista fixa das 17 estatísticas da tela "DESEMPENHO
-# INDIVIDUAL", sempre na mesma ordem. Usamos essa lista
-# em vez de confiar no texto (rótulo) lido pelo OCR, porque
-# o OCR erra muito em acentuação portuguesa (ex: "Assisténcias",
-# "Precisdo"). O NÚMERO é o que importa e esse o Tesseract lê
-# bem — o rótulo a gente já sabe de antemão.
-# ======================================================
+# INDIVIDUAL", sempre na mesma ordem.
 
 ROTULOS_TABELA = [
     "gols",
