@@ -28,8 +28,6 @@ def ocr_texto(imagem, config):
     return pytesseract.image_to_string(imagem, lang="por+eng", config=config).strip()
 
 
-# Detecta a aba pelo nome do arquivo (resumo.png, posse.png, etc)
-
 def detectar_aba(caminho):
     nome = os.path.basename(caminho).lower()
     if "resumo" in nome:
@@ -48,7 +46,6 @@ def detectar_aba(caminho):
 
 
 # Rótulos de cada aba, na ordem em que aparecem na tela.
-# None = linha de cabeçalho de seção (ex: "POSSE (GERAL)"), não tem valor.
 
 ROTULOS_RESUMO = [
     "gols", "assistencias", "finalizacoes", "precisao_finalizacoes_pct",
@@ -105,7 +102,8 @@ COORDENADAS_TABELA = {
 }
 
 
-# Acha a posição Y de cada linha da tabela usando o OCR da coluna de RÓTULOS
+# Acha a posição Y de cada linha da tabela usando o OCR da coluna de RÓTULOS 
+# Fazendo o tratamento do erro para caso aja um 0 em alguma das tabelas
 
 def linhas_da_tabela(gray, x, y, w_label, h):
     crop = gray[y:y + h, x:x + w_label]
@@ -144,7 +142,6 @@ def ocr_numero(gray, y_topo, y_fundo, x_ini, x_fim, pad=4):
     texto = pytesseract.image_to_string(
         otsu, lang="por+eng", config="--oem 3 --psm 7 -c tessedit_char_whitelist=0123456789,."
     ).strip().strip(".")
-    # linha em branco quase sempre é um "0" que sumiu no threshold
     return texto if texto else "0"
 
 
@@ -232,7 +229,6 @@ for imagem in imagens:
     # Lê a imagem da aba correspondente
     dados = ler_aba(imagem, aba)
 
-    # Quando chega outro "resumo", significa que começou um novo jogador
     if aba == "resumo" and registro:
         jogadores.append(registro)
         for campo in registro:
