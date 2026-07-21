@@ -1,3 +1,10 @@
-nome,overall,gols,assistencias,finalizacoes,precisao_finalizacoes_pct,passes,precisao_passes_pct,dribles,taxa_dribles_certos_pct,divididas,taxa_divididas_ganhas_pct,impedimentos,faltas_cometidas,posses_bola_ganhas,perdas_posse_bola,minutos_jogados_media_time,distancia_percorrida_media_time_km,distancia_corrida_media_time_km
-Elorran Nycolas,67,0,0,2,50,5,80,10,60,2,50,0,0,25,4,24,"2,8","1,0"
-Anthony Gordon,75,1,3,1,100,11,82,10,90,0,0,0,0,1,2,93,"0,9","2,1"
+nome,overall,gols,time_gols,assistencias,time_assistencias,finalizacoes,time_finalizacoes,precisao_finalizacoes_pct,time_precisao_finalizacoes_pct,passes,time_passes,precisao_passes_pct,time_precisao_passes_pct,dribles,time_dribles,taxa_dribles_certos_pct,time_taxa_dribles_certos_pct,divididas,time_divididas,taxa_divididas_ganhas_pct,time_taxa_divididas_ganhas_pct,impedimentos,time_impedimentos,faltas_cometidas,time_faltas_cometidas,posses_bola_ganhas,time_posses_bola_ganhas,perdas_posse_bola,time_perdas_posse_bola,minutos_jogados_media_time,time_minutos_jogados_media_time,distancia_percorrida_media_time_km,time_distancia_percorrida_media_time_km,distancia_corrida_media_time_km,time_distancia_corrida_media_time_km
+Jefferson Lerma,75,0,3,0,3,0,12,0,90,0,90,67,82,2,72,100,88,3,14,0,97,0,0,0,1,1,26,1,22,73,65,"7,0","6,5","0,7","1,1"
+Daniel Munoz,76,0,0,9 ,3,1,3,0,12,0,90,9,90,89,82,6,72,100,88,1,14,100,97,0,0,0,1,4,26,1,22,73,65,"8,2","6,5"
+Jefferson Lerma,76,0,2,0,1,0,6,0,90,15,108,93,88,10,90,100,90,1,7,100,43,0,0,0,2,5,18,1,15,93,78,"9,8","7,5","1,6","1,1"
+Jean-Philippe Mateta,76,0,3,1,2,3,12,67,33,5,163,100,88,3,130,100,92,0,9,0,33,0,0,0,2,1,21,0,22,90,69,"4,1","6,2","0,3","0,7"
+Jefferson Lerma,76,0,4,0,0,0,9,0,22,20,105,100,94,17,89,94,92,2,7,0,0,0,0,0,0,3,17,0,14,46,46,"4,5",0,"0,5","0,4"
+Eberechi Eze,80,0,0,0,1,6,16,17,31,38,291,89,71,38,231,82,91,1,19,0,16,0,0,0,2,1,0,12,39,117,82,"2,1","7,4","1,4","0,8"
+Chris Richards,,0,3,0,3,0,8,0,63,7,89,100,85,3,69,67,83,5,16,60,38,0,0,0,3,7,23,0,18,93,73,"9,3","7,7","1,4","1,5"
+Elorran Nycolas,67,0,1,0,1,2,12,90,50,5,136,80,85,10,107,60,93,2,32,90,28,0,0,0,2,3,25,4,24,24,67,"2,8","6,5","1,0","1,3"
+Anthony Gordon,75,0,0,3,6,1,10,100,90,11,84,82,87,10,75,90,87,0,11,0,64,0,0,0,1,1,19,2,14,93,63,"0,9","6,5","2,1","1,3"
